@@ -1,0 +1,1730 @@
+const dashboardData = {
+  "Bot_Summary": [
+    {
+      "Brand_ID": "B01",
+      "Total_Events": 58179,
+      "Bot_Events": 20678,
+      "Bot_Percentage": 35.54
+    },
+    {
+      "Brand_ID": "B02",
+      "Total_Events": 57000,
+      "Bot_Events": 19000,
+      "Bot_Percentage": 33.33
+    },
+    {
+      "Brand_ID": "B03",
+      "Total_Events": 55003,
+      "Bot_Events": 17696,
+      "Bot_Percentage": 32.17
+    },
+    {
+      "Brand_ID": "B04",
+      "Total_Events": 55225,
+      "Bot_Events": 18052,
+      "Bot_Percentage": 32.69
+    },
+    {
+      "Brand_ID": "B05",
+      "Total_Events": 56670,
+      "Bot_Events": 20184,
+      "Bot_Percentage": 35.62
+    },
+    {
+      "Brand_ID": "B06",
+      "Total_Events": 57729,
+      "Bot_Events": 20586,
+      "Bot_Percentage": 35.66
+    },
+    {
+      "Brand_ID": "B07",
+      "Total_Events": 57831,
+      "Bot_Events": 19718,
+      "Bot_Percentage": 34.1
+    },
+    {
+      "Brand_ID": "B08",
+      "Total_Events": 55148,
+      "Bot_Events": 18344,
+      "Bot_Percentage": 33.26
+    },
+    {
+      "Brand_ID": "B09",
+      "Total_Events": 57472,
+      "Bot_Events": 20358,
+      "Bot_Percentage": 35.42
+    },
+    {
+      "Brand_ID": "B10",
+      "Total_Events": 56253,
+      "Bot_Events": 19324,
+      "Bot_Percentage": 34.35
+    }
+  ],
+  "Brand_Results": {
+    "B01": {
+      "Total_Journeys": 9796,
+      "Total_Conversions": 698,
+      "Base_Conversion_Rate": 0.07125357288689262,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B01_GOO_434",
+          "Total_Budget": 27896859.25,
+          "Wasted_Budget": 23039574.77895453,
+          "Effective_Budget": 4857284.471045472,
+          "Markov_Conversions": 116.34863123150387,
+          "Shapley_Conversions": 114.68333333333334,
+          "Markov_CPA": 239769.55254843025,
+          "Shapley_CPA": 243251.20694666472,
+          "Markov_CPA_Effective": 41747.67180011533,
+          "Shapley_CPA_Effective": 42353.88290404422,
+          "Markov_Allocated_Budget": 15106783.001890393,
+          "Markov_Projected_Conversions": 112.18596883631326,
+          "Shapley_Allocated_Budget": 14993469.67453935,
+          "Shapley_Projected_Conversions": 110.52988594252069
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B01_INF_899",
+          "Total_Budget": 14499430.43,
+          "Wasted_Budget": 3394037.078233184,
+          "Effective_Budget": 11105393.351766815,
+          "Markov_Conversions": 116.93764240470914,
+          "Shapley_Conversions": 128.43333333333334,
+          "Markov_CPA": 123992.8403876911,
+          "Shapley_CPA": 112894.60495717623,
+          "Markov_CPA_Effective": 94968.50734626745,
+          "Shapley_CPA_Effective": 86468.15482818699,
+          "Markov_Allocated_Budget": 15786486.11109907,
+          "Markov_Projected_Conversions": 117.54074599710506,
+          "Shapley_Allocated_Budget": 17456820.143193636,
+          "Shapley_Projected_Conversions": 129.87908695635804
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B01_INS_285",
+          "Total_Budget": 613144.27,
+          "Wasted_Budget": 138848.43923619666,
+          "Effective_Budget": 474295.83076380333,
+          "Markov_Conversions": 234.13601235886009,
+          "Shapley_Conversions": 213.85,
+          "Markov_CPA": 2618.7525098028673,
+          "Shapley_CPA": 2867.1698386719663,
+          "Markov_CPA_Effective": 2025.727806608624,
+          "Shapley_CPA_Effective": 2217.8902537470344,
+          "Markov_Allocated_Budget": 39111391.163370356,
+          "Markov_Projected_Conversions": 307.1468070354474,
+          "Shapley_Allocated_Budget": 35967458.342276014,
+          "Shapley_Projected_Conversions": 279.1902560237067
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B01_MAR_127",
+          "Total_Budget": 37182759.79,
+          "Wasted_Budget": 31131507.080669645,
+          "Effective_Budget": 6051252.709330354,
+          "Markov_Conversions": 115.61610106924218,
+          "Shapley_Conversions": 118.35000000000001,
+          "Markov_CPA": 321605.3771587691,
+          "Shapley_CPA": 314176.25509083224,
+          "Markov_CPA_Effective": 52339.18678598472,
+          "Shapley_CPA_Effective": 51130.145410480385,
+          "Markov_Allocated_Budget": 14764127.213115426,
+          "Markov_Projected_Conversions": 109.4898876083666,
+          "Shapley_Allocated_Budget": 15215712.844927518,
+          "Shapley_Projected_Conversions": 112.28347923387763
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B01_YOU_211",
+          "Total_Budget": 19807806.26,
+          "Wasted_Budget": 4560890.4080166975,
+          "Effective_Budget": 15246915.851983305,
+          "Markov_Conversions": 114.96161293568484,
+          "Shapley_Conversions": 122.68333333333334,
+          "Markov_CPA": 172299.30717031137,
+          "Shapley_CPA": 161454.74468142918,
+          "Markov_CPA_Effective": 132626.14765602825,
+          "Shapley_CPA_Effective": 124278.62398030136,
+          "Markov_Allocated_Budget": 15231212.510524739,
+          "Markov_Projected_Conversions": 113.16393827112863,
+          "Shapley_Allocated_Budget": 16366538.995063476,
+          "Shapley_Projected_Conversions": 121.28986144035069
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 698.0000000000001,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 759.527347748361,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 8.814806267673474
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 698.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 753.1725695968138,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 7.90437959839739
+      }
+    },
+    "B02": {
+      "Total_Journeys": 9810,
+      "Total_Conversions": 1277,
+      "Base_Conversion_Rate": 0.13017329255861368,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B02_GOO_562",
+          "Total_Budget": 23670390.5,
+          "Wasted_Budget": 19343323.891011726,
+          "Effective_Budget": 4327066.608988274,
+          "Markov_Conversions": 478.6763200434758,
+          "Shapley_Conversions": 364.28333333333336,
+          "Markov_CPA": 49449.679269386324,
+          "Shapley_CPA": 64977.96724161595,
+          "Markov_CPA_Effective": 9039.650443947734,
+          "Shapley_CPA_Effective": 11878.299699835128,
+          "Markov_Allocated_Budget": 36404135.98801572,
+          "Markov_Projected_Conversions": 490.8113613613138,
+          "Shapley_Allocated_Budget": 27107687.9628529,
+          "Shapley_Projected_Conversions": 367.1923344518303
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B02_INF_733",
+          "Total_Budget": 1570849.0,
+          "Wasted_Budget": 337577.55216602405,
+          "Effective_Budget": 1233271.447833976,
+          "Markov_Conversions": 205.81286793642127,
+          "Shapley_Conversions": 357.1166666666667,
+          "Markov_CPA": 7632.413928973864,
+          "Shapley_CPA": 4398.699771316563,
+          "Markov_CPA_Effective": 5992.197962155371,
+          "Shapley_CPA_Effective": 3453.413304244111,
+          "Markov_Allocated_Budget": 18629029.59353564,
+          "Markov_Projected_Conversions": 241.48905333876905,
+          "Shapley_Allocated_Budget": 31630457.13623581,
+          "Shapley_Projected_Conversions": 432.27153573803463
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B02_INS_943",
+          "Total_Budget": 21083427.6,
+          "Wasted_Budget": 4606707.155198531,
+          "Effective_Budget": 16476720.44480147,
+          "Markov_Conversions": 196.21299676081694,
+          "Shapley_Conversions": 183.28333333333336,
+          "Markov_CPA": 107451.73840701612,
+          "Shapley_CPA": 115031.88651450395,
+          "Markov_CPA_Effective": 83973.64454346795,
+          "Shapley_CPA_Effective": 89897.53811840393,
+          "Markov_Allocated_Budget": 15024660.73488994,
+          "Markov_Projected_Conversions": 192.27111636908415,
+          "Shapley_Allocated_Budget": 13733019.647060893,
+          "Shapley_Projected_Conversions": 178.624256528996
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B02_MAR_708",
+          "Total_Budget": 31212839.26,
+          "Wasted_Budget": 25970476.652328182,
+          "Effective_Budget": 5242362.60767182,
+          "Markov_Conversions": 198.71357751624956,
+          "Shapley_Conversions": 183.45,
+          "Markov_CPA": 157074.51725309313,
+          "Shapley_CPA": 170143.57732352143,
+          "Markov_CPA_Effective": 26381.501823865718,
+          "Shapley_CPA_Effective": 28576.52007452614,
+          "Markov_Allocated_Budget": 14870030.651234604,
+          "Markov_Projected_Conversions": 190.17512301664848,
+          "Shapley_Allocated_Budget": 13431432.585017072,
+          "Shapley_Projected_Conversions": 174.4857078042771
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B02_YOU_280",
+          "Total_Budget": 22462493.63,
+          "Wasted_Budget": 4894571.38030103,
+          "Effective_Budget": 17567922.249698967,
+          "Markov_Conversions": 197.58423774303665,
+          "Shapley_Conversions": 188.86666666666667,
+          "Markov_CPA": 113685.65573136986,
+          "Shapley_CPA": 118933.07605012353,
+          "Markov_CPA_Effective": 88913.5816215588,
+          "Shapley_CPA_Effective": 93017.59045022396,
+          "Markov_Allocated_Budget": 15072143.032324096,
+          "Markov_Projected_Conversions": 192.92693305921983,
+          "Shapley_Allocated_Budget": 14097402.66883332,
+          "Shapley_Projected_Conversions": 183.66888317928408
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 1277.0000000000002,
+        "Total_Spend_Historical": 99999999.99000001,
+        "Total_Conversions_Projected": 1307.6735871450353,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 2.402003691237679
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 1277.0,
+        "Total_Spend_Historical": 99999999.99000001,
+        "Total_Conversions_Projected": 1336.2427177024222,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 4.639210469392408
+      }
+    },
+    "B03": {
+      "Total_Journeys": 9820,
+      "Total_Conversions": 303,
+      "Base_Conversion_Rate": 0.030855397148676165,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B03_GOO_493",
+          "Total_Budget": 7617676.67,
+          "Wasted_Budget": 6185057.549421338,
+          "Effective_Budget": 1432619.1205786616,
+          "Markov_Conversions": 62.45747289077452,
+          "Shapley_Conversions": 64.41666666666667,
+          "Markov_CPA": 121965.81637751778,
+          "Shapley_CPA": 118256.30018111254,
+          "Markov_CPA_Effective": 22937.51338745361,
+          "Shapley_CPA_Effective": 22239.882855037435,
+          "Markov_Allocated_Budget": 21471415.942231063,
+          "Markov_Projected_Conversions": 66.54189135312164,
+          "Shapley_Allocated_Budget": 22147108.103268705,
+          "Shapley_Projected_Conversions": 68.75516381240654
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B03_INF_649",
+          "Total_Budget": 7654283.5,
+          "Wasted_Budget": 1518359.9106122449,
+          "Effective_Budget": 6135923.589387755,
+          "Markov_Conversions": 63.157612622935204,
+          "Shapley_Conversions": 62.08333333333334,
+          "Markov_CPA": 121193.36343027643,
+          "Shapley_CPA": 123290.47248322146,
+          "Markov_CPA_Effective": 97152.55746002567,
+          "Shapley_CPA_Effective": 98833.66855389671,
+          "Markov_Allocated_Budget": 21702995.412629914,
+          "Markov_Projected_Conversions": 67.31021070541158,
+          "Shapley_Allocated_Budget": 21339753.4987933,
+          "Shapley_Projected_Conversions": 66.0991887841823
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B03_INS_238",
+          "Total_Budget": 14324501.92,
+          "Wasted_Budget": 2960627.334481571,
+          "Effective_Budget": 11363874.585518429,
+          "Markov_Conversions": 59.30135395830579,
+          "Shapley_Conversions": 58.91666666666667,
+          "Markov_CPA": 241554.3822164907,
+          "Shapley_CPA": 243131.57431400282,
+          "Markov_CPA_Effective": 191629.26016003377,
+          "Shapley_CPA_Effective": 192880.4738701855,
+          "Markov_Allocated_Budget": 19612148.742273714,
+          "Markov_Projected_Conversions": 60.432058436721285,
+          "Shapley_Allocated_Budget": 19480814.73175017,
+          "Shapley_Projected_Conversions": 60.01601160044615
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B03_MAR_375",
+          "Total_Budget": 21217662.64,
+          "Wasted_Budget": 17212139.460355677,
+          "Effective_Budget": 4005523.179644324,
+          "Markov_Conversions": 58.37825032877648,
+          "Shapley_Conversions": 56.25,
+          "Markov_CPA": 363451.4998395069,
+          "Shapley_CPA": 377202.8913777778,
+          "Markov_CPA_Effective": 68613.27903946917,
+          "Shapley_CPA_Effective": 71209.30097145465,
+          "Markov_Allocated_Budget": 18852877.903755795,
+          "Markov_Projected_Conversions": 57.9693396408487,
+          "Shapley_Allocated_Budget": 18165415.19930375,
+          "Shapley_Projected_Conversions": 55.732142309318355
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B03_YOU_269",
+          "Total_Budget": 49185875.27,
+          "Wasted_Budget": 9956290.95024446,
+          "Effective_Budget": 39229584.31975554,
+          "Markov_Conversions": 59.70531019920799,
+          "Shapley_Conversions": 61.33333333333334,
+          "Markov_CPA": 823810.7315059636,
+          "Shapley_CPA": 801943.6185326086,
+          "Markov_CPA_Effective": 657053.5215186928,
+          "Shapley_CPA_Effective": 639612.787822101,
+          "Markov_Allocated_Budget": 18360561.999109518,
+          "Markov_Projected_Conversions": 56.383458735864515,
+          "Shapley_Allocated_Budget": 18866908.466884073,
+          "Shapley_Projected_Conversions": 58.01511164107147
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 303.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 308.63695887196775,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 1.8603824659959567
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 303.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 308.6176181474248,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 1.8539993885890498
+      }
+    },
+    "B04": {
+      "Total_Journeys": 9816,
+      "Total_Conversions": 315,
+      "Base_Conversion_Rate": 0.032090464547677264,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B04_GOO_168",
+          "Total_Budget": 36526547.07,
+          "Wasted_Budget": 29330463.91812665,
+          "Effective_Budget": 7196083.15187335,
+          "Markov_Conversions": 63.52623184685924,
+          "Shapley_Conversions": 63.76666666666667,
+          "Markov_CPA": 574983.6879677271,
+          "Shapley_CPA": 572815.6884997386,
+          "Markov_CPA_Effective": 113277.34925661465,
+          "Shapley_CPA_Effective": 112850.23238693178,
+          "Markov_Allocated_Budget": 19143708.620118957,
+          "Markov_Projected_Conversions": 61.16932671995388,
+          "Shapley_Allocated_Budget": 19215746.598672207,
+          "Shapley_Projected_Conversions": 61.41459500131702
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B04_INF_295",
+          "Total_Budget": 30364224.78,
+          "Wasted_Budget": 6245099.515500689,
+          "Effective_Budget": 24119125.264499314,
+          "Markov_Conversions": 68.45318489465386,
+          "Shapley_Conversions": 68.6,
+          "Markov_CPA": 443576.5089196226,
+          "Shapley_CPA": 442627.18338192423,
+          "Markov_CPA_Effective": 352344.82225505624,
+          "Shapley_CPA_Effective": 351590.7472959084,
+          "Markov_Allocated_Budget": 20849799.706462793,
+          "Markov_Projected_Conversions": 66.95958067510048,
+          "Shapley_Allocated_Budget": 20893511.868055165,
+          "Shapley_Projected_Conversions": 67.11153139366195
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B04_INS_252",
+          "Total_Budget": 15309934.29,
+          "Wasted_Budget": 3144922.202509389,
+          "Effective_Budget": 12165012.08749061,
+          "Markov_Conversions": 61.05153070577467,
+          "Shapley_Conversions": 61.35,
+          "Markov_CPA": 250770.6868773379,
+          "Shapley_CPA": 249550.68117359412,
+          "Markov_CPA_Effective": 199258.1012606775,
+          "Shapley_CPA_Effective": 198288.70558256903,
+          "Markov_Allocated_Budget": 19365711.83171282,
+          "Markov_Projected_Conversions": 61.91874718700144,
+          "Shapley_Allocated_Budget": 19459920.249650747,
+          "Shapley_Projected_Conversions": 62.239452126224535
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B04_MAR_496",
+          "Total_Budget": 3582617.28,
+          "Wasted_Budget": 2945418.5623230487,
+          "Effective_Budget": 637198.7176769511,
+          "Markov_Conversions": 61.18358452217416,
+          "Shapley_Conversions": 61.599999999999994,
+          "Markov_CPA": 58555.20411200471,
+          "Shapley_CPA": 58159.37142857143,
+          "Markov_CPA_Effective": 10414.537210483597,
+          "Shapley_CPA_Effective": 10344.135027223232,
+          "Markov_Allocated_Budget": 21272737.329750948,
+          "Markov_Projected_Conversions": 68.40536838439161,
+          "Shapley_Allocated_Budget": 21415897.00495299,
+          "Shapley_Projected_Conversions": 68.89831229113584
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B04_YOU_519",
+          "Total_Budget": 14216676.58,
+          "Wasted_Budget": 2955485.43287239,
+          "Effective_Budget": 11261191.14712761,
+          "Markov_Conversions": 60.78546803053806,
+          "Shapley_Conversions": 59.68333333333334,
+          "Markov_CPA": 233882.8183877382,
+          "Shapley_CPA": 238201.7857581681,
+          "Markov_CPA_Effective": 185261.23943752627,
+          "Shapley_CPA_Effective": 188682.342593593,
+          "Markov_Allocated_Budget": 19368042.511954483,
+          "Markov_Projected_Conversions": 61.92666295775971,
+          "Shapley_Allocated_Budget": 19014924.27866889,
+          "Shapley_Projected_Conversions": 60.737158217470714
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 315.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 320.37968592420714,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 1.7078368013355993
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 315.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 320.40104902981005,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 1.7146187396222392
+      }
+    },
+    "B05": {
+      "Total_Journeys": 9791,
+      "Total_Conversions": 161,
+      "Base_Conversion_Rate": 0.016443672760698604,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B05_GOO_763",
+          "Total_Budget": 15701645.57,
+          "Wasted_Budget": 13003634.600516317,
+          "Effective_Budget": 2698010.969483683,
+          "Markov_Conversions": 34.269861932039674,
+          "Shapley_Conversions": 42.28333333333333,
+          "Markov_CPA": 458176.5050917866,
+          "Shapley_CPA": 371343.6082774931,
+          "Markov_CPA_Effective": 78728.38749202111,
+          "Shapley_CPA_Effective": 63807.90625503389,
+          "Markov_Allocated_Budget": 21327551.420399457,
+          "Markov_Projected_Conversions": 34.90323924127411,
+          "Shapley_Allocated_Budget": 24892308.614447437,
+          "Shapley_Projected_Conversions": 43.45923730303249
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B05_INF_572",
+          "Total_Budget": 18177177.5,
+          "Wasted_Budget": 4155783.1924470617,
+          "Effective_Budget": 14021394.307552937,
+          "Markov_Conversions": 34.72955876336592,
+          "Shapley_Conversions": 40.2,
+          "Markov_CPA": 523392.12323002465,
+          "Shapley_CPA": 452168.59452736314,
+          "Markov_CPA_Effective": 403730.85080318514,
+          "Shapley_CPA_Effective": 348790.90317295864,
+          "Markov_Allocated_Budget": 21424429.08408894,
+          "Markov_Projected_Conversions": 35.07105395101824,
+          "Shapley_Allocated_Budget": 23456290.84175328,
+          "Shapley_Projected_Conversions": 40.813189024380115
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B05_INS_247",
+          "Total_Budget": 40539414.94,
+          "Wasted_Budget": 9543595.967343858,
+          "Effective_Budget": 30995818.97265614,
+          "Markov_Conversions": 32.72930615889436,
+          "Shapley_Conversions": 33.86666666666667,
+          "Markov_CPA": 1238627.3862082225,
+          "Shapley_CPA": 1197029.9687007873,
+          "Markov_CPA_Effective": 947035.6267920107,
+          "Shapley_CPA_Effective": 915230.8751768544,
+          "Markov_Allocated_Budget": 19262234.08473974,
+          "Markov_Projected_Conversions": 31.33901611384363,
+          "Shapley_Allocated_Budget": 18856977.288376547,
+          "Shapley_Projected_Conversions": 32.38695534928803
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B05_MAR_780",
+          "Total_Budget": 4187707.34,
+          "Wasted_Budget": 3449101.5240244395,
+          "Effective_Budget": 738605.8159755603,
+          "Markov_Conversions": 35.30319903257926,
+          "Shapley_Conversions": 43.45,
+          "Markov_CPA": 118621.18603289775,
+          "Shapley_CPA": 96379.9157652474,
+          "Markov_CPA_Effective": 20921.781487676068,
+          "Shapley_CPA_Effective": 16998.983106457083,
+          "Markov_Allocated_Budget": 23871071.36306121,
+          "Markov_Projected_Conversions": 39.33304263959743,
+          "Shapley_Allocated_Budget": 27794423.255422752,
+          "Shapley_Projected_Conversions": 48.84341780250317
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B05_YOU_992",
+          "Total_Budget": 40000000.0,
+          "Wasted_Budget": 9119266.055045871,
+          "Effective_Budget": 30880733.944954127,
+          "Markov_Conversions": 23.968074113120778,
+          "Shapley_Conversions": 1.2,
+          "Markov_CPA": 1668886.6953270521,
+          "Shapley_CPA": 33333333.333333336,
+          "Markov_CPA_Effective": 1288411.1505667104,
+          "Shapley_CPA_Effective": 25733944.95412844,
+          "Markov_Allocated_Budget": 14114714.04771065,
+          "Markov_Projected_Conversions": 22.541767768885833,
+          "Shapley_Allocated_Budget": 5000000.0,
+          "Shapley_Projected_Conversions": 1.057445495973858
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 161.0,
+        "Total_Spend_Historical": 118605945.35,
+        "Total_Conversions_Projected": 163.18811971461923,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 2.4118103813787353
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 161.0,
+        "Total_Spend_Historical": 118605945.35,
+        "Total_Conversions_Projected": 166.56024497517765,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 4.5403007051207815
+      }
+    },
+    "B06": {
+      "Total_Journeys": 9795,
+      "Total_Conversions": 290,
+      "Base_Conversion_Rate": 0.029606942317508926,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B06_GOO_837",
+          "Total_Budget": 39418418.56,
+          "Wasted_Budget": 32694561.079984095,
+          "Effective_Budget": 6723857.480015907,
+          "Markov_Conversions": 59.98538470895425,
+          "Shapley_Conversions": 58.9,
+          "Markov_CPA": 657133.7126744452,
+          "Shapley_CPA": 669243.0994906622,
+          "Markov_CPA_Effective": 112091.59552180402,
+          "Shapley_CPA_Effective": 114157.17283558418,
+          "Markov_Allocated_Budget": 19010087.590505917,
+          "Markov_Projected_Conversions": 57.48419625814501,
+          "Shapley_Allocated_Budget": 18678121.97945604,
+          "Shapley_Projected_Conversions": 56.38474030718775
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B06_INF_472",
+          "Total_Budget": 6641245.02,
+          "Wasted_Budget": 1530087.1322436682,
+          "Effective_Budget": 5111157.887756331,
+          "Markov_Conversions": 56.78620972718436,
+          "Shapley_Conversions": 60.06666666666667,
+          "Markov_CPA": 116951.72211539137,
+          "Shapley_CPA": 110564.56748057713,
+          "Markov_CPA_Effective": 90007.0265705645,
+          "Shapley_CPA_Effective": 85091.41877507765,
+          "Markov_Allocated_Budget": 20037648.233939573,
+          "Markov_Projected_Conversions": 60.778222475807645,
+          "Shapley_Allocated_Budget": 21207877.621665902,
+          "Shapley_Projected_Conversions": 64.50632778368758
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B06_INS_122",
+          "Total_Budget": 727584.7,
+          "Wasted_Budget": 169456.2531874931,
+          "Effective_Budget": 558128.4468125069,
+          "Markov_Conversions": 54.967201372660604,
+          "Shapley_Conversions": 52.81666666666667,
+          "Markov_CPA": 13236.706287213005,
+          "Shapley_CPA": 13775.66487851057,
+          "Markov_CPA_Effective": 10153.845072601911,
+          "Shapley_CPA_Effective": 10567.27889200076,
+          "Markov_Allocated_Budget": 22572021.902832884,
+          "Markov_Projected_Conversions": 68.95482388082159,
+          "Shapley_Allocated_Budget": 21702204.847706906,
+          "Shapley_Projected_Conversions": 66.10326468659603
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B06_MAR_225",
+          "Total_Budget": 21787747.45,
+          "Wasted_Budget": 17856190.578167006,
+          "Effective_Budget": 3931556.871832993,
+          "Markov_Conversions": 58.83745527096226,
+          "Shapley_Conversions": 61.81666666666667,
+          "Markov_CPA": 370304.04101709666,
+          "Shapley_CPA": 352457.4944729037,
+          "Markov_CPA_Effective": 66820.6477273213,
+          "Shapley_CPA_Effective": 63600.27293339972,
+          "Markov_Allocated_Budget": 19300877.76754364,
+          "Markov_Projected_Conversions": 58.41542805584221,
+          "Shapley_Allocated_Budget": 20291819.893395536,
+          "Shapley_Projected_Conversions": 61.55643991244314
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B06_YOU_876",
+          "Total_Budget": 31425004.26,
+          "Wasted_Budget": 7137874.4791867,
+          "Effective_Budget": 24287129.780813303,
+          "Markov_Conversions": 59.42374892023857,
+          "Shapley_Conversions": 56.400000000000006,
+          "Markov_CPA": 528829.0427818709,
+          "Shapley_CPA": 557180.9265957447,
+          "Markov_CPA_Effective": 408710.8306379771,
+          "Shapley_CPA_Effective": 430622.86845413654,
+          "Markov_Allocated_Budget": 19079364.505177997,
+          "Markov_Projected_Conversions": 57.70608416126758,
+          "Shapley_Allocated_Budget": 18119975.657775614,
+          "Shapley_Projected_Conversions": 54.60118122201441
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 290.00000000000006,
+        "Total_Spend_Historical": 99999999.99000001,
+        "Total_Conversions_Projected": 303.33875483188405,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 4.599570631033396
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 290.0,
+        "Total_Spend_Historical": 99999999.99000001,
+        "Total_Conversions_Projected": 303.1519539119289,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 4.5351565207048665
+      }
+    },
+    "B07": {
+      "Total_Journeys": 9798,
+      "Total_Conversions": 1633,
+      "Base_Conversion_Rate": 0.16666666666666669,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B07_GOO_945",
+          "Total_Budget": 26291275.48,
+          "Wasted_Budget": 21322403.876911264,
+          "Effective_Budget": 4968871.6030887365,
+          "Markov_Conversions": 545.6676708627296,
+          "Shapley_Conversions": 595.25,
+          "Markov_CPA": 48181.84562488758,
+          "Shapley_CPA": 44168.459437211255,
+          "Markov_CPA_Effective": 9106.039936785492,
+          "Shapley_CPA_Effective": 8347.537342442229,
+          "Markov_Allocated_Budget": 31959866.79721049,
+          "Markov_Projected_Conversions": 551.9035385113178,
+          "Shapley_Allocated_Budget": 34819207.189409964,
+          "Shapley_Projected_Conversions": 605.0379568954216
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B07_INF_971",
+          "Total_Budget": 3100510.3,
+          "Wasted_Budget": 695088.18783907,
+          "Effective_Budget": 2405422.11216093,
+          "Markov_Conversions": 251.61571037692744,
+          "Shapley_Conversions": 261.25,
+          "Markov_CPA": 12322.403459447536,
+          "Shapley_CPA": 11867.982009569378,
+          "Markov_CPA_Effective": 9559.904302309023,
+          "Shapley_CPA_Effective": 9207.357367123177,
+          "Markov_Allocated_Budget": 16844812.00080516,
+          "Markov_Projected_Conversions": 280.1064627384121,
+          "Shapley_Allocated_Budget": 17467403.949724797,
+          "Shapley_Projected_Conversions": 291.4660096950083
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B07_INS_560",
+          "Total_Budget": 48113171.41,
+          "Wasted_Budget": 11115128.921143275,
+          "Effective_Budget": 36998042.48885672,
+          "Markov_Conversions": 251.3667348219012,
+          "Shapley_Conversions": 258.5,
+          "Markov_CPA": 191406.2791327151,
+          "Shapley_CPA": 186124.45419729204,
+          "Markov_CPA_Effective": 147187.50480277606,
+          "Shapley_CPA_Effective": 143125.88970544186,
+          "Markov_Allocated_Budget": 14219622.386345362,
+          "Markov_Projected_Conversions": 234.0453447354567,
+          "Shapley_Allocated_Budget": 14604405.752534194,
+          "Shapley_Projected_Conversions": 241.07725208116062
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B07_MAR_355",
+          "Total_Budget": 20197564.69,
+          "Wasted_Budget": 16897028.86417233,
+          "Effective_Budget": 3300535.825827673,
+          "Markov_Conversions": 333.59626877357744,
+          "Shapley_Conversions": 253.33333333333337,
+          "Markov_CPA": 60544.93584191956,
+          "Shapley_CPA": 79727.22903947368,
+          "Markov_CPA_Effective": 9893.803182996191,
+          "Shapley_CPA_Effective": 13028.430891425023,
+          "Markov_Allocated_Budget": 19845046.348262217,
+          "Markov_Projected_Conversions": 333.24707376913267,
+          "Shapley_Allocated_Budget": 15051018.538938023,
+          "Shapley_Projected_Conversions": 248.90380151802188
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B07_YOU_778",
+          "Total_Budget": 2297478.12,
+          "Wasted_Budget": 518420.1717029567,
+          "Effective_Budget": 1779057.9482970433,
+          "Markov_Conversions": 250.75361516486424,
+          "Shapley_Conversions": 264.6666666666667,
+          "Markov_CPA": 9162.293107875896,
+          "Shapley_CPA": 8680.647808564232,
+          "Markov_CPA_Effective": 7094.844663066401,
+          "Shapley_CPA_Effective": 6721.881416739458,
+          "Markov_Allocated_Budget": 17130652.467376765,
+          "Markov_Projected_Conversions": 285.14749705529573,
+          "Shapley_Allocated_Budget": 18057964.56939303,
+          "Shapley_Projected_Conversions": 301.9214577173145
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 1632.9999999999998,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 1684.449916809615,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 3.150637894036432
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 1633.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 1688.406477906927,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 3.3929257750720594
+      }
+    },
+    "B08": {
+      "Total_Journeys": 9813,
+      "Total_Conversions": 306,
+      "Base_Conversion_Rate": 0.031183124426780798,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B08_GOO_925",
+          "Total_Budget": 2904290.79,
+          "Wasted_Budget": 2387773.0546204764,
+          "Effective_Budget": 516517.7353795236,
+          "Markov_Conversions": 63.5643304882429,
+          "Shapley_Conversions": 62.43333333333334,
+          "Markov_CPA": 45690.574693258015,
+          "Shapley_CPA": 46518.272130272286,
+          "Markov_CPA_Effective": 8125.905384546772,
+          "Shapley_CPA_Effective": 8273.10841504843,
+          "Markov_Allocated_Budget": 22513723.89015545,
+          "Markov_Projected_Conversions": 72.31169475806259,
+          "Shapley_Allocated_Budget": 22075714.763249353,
+          "Shapley_Projected_Conversions": 70.9426311379228
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B08_INF_464",
+          "Total_Budget": 3308082.46,
+          "Wasted_Budget": 703493.8876164895,
+          "Effective_Budget": 2604588.5723835104,
+          "Markov_Conversions": 58.747063839186794,
+          "Shapley_Conversions": 64.26666666666668,
+          "Markov_CPA": 56310.600799649976,
+          "Shapley_CPA": 51474.312136929446,
+          "Markov_CPA_Effective": 44335.6382799533,
+          "Shapley_CPA_Effective": 40527.8304831459,
+          "Markov_Allocated_Budget": 20628114.650973663,
+          "Markov_Projected_Conversions": 65.90965308184963,
+          "Shapley_Allocated_Budget": 22526240.348990954,
+          "Shapley_Projected_Conversions": 72.47906347183145
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B08_INS_255",
+          "Total_Budget": 8953762.4,
+          "Wasted_Budget": 1873491.4757921419,
+          "Effective_Budget": 7080270.924207859,
+          "Markov_Conversions": 59.303766777003844,
+          "Shapley_Conversions": 57.68333333333334,
+          "Markov_CPA": 150981.34379335903,
+          "Shapley_CPA": 155222.69401906963,
+          "Markov_CPA_Effective": 119389.90234518067,
+          "Shapley_CPA_Effective": 122743.78949796922,
+          "Markov_Allocated_Budget": 19527798.177888535,
+          "Markov_Projected_Conversions": 62.192585415635705,
+          "Shapley_Allocated_Budget": 18961111.689597584,
+          "Shapley_Projected_Conversions": 60.387098047244
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B08_MAR_739",
+          "Total_Budget": 42332639.22,
+          "Wasted_Budget": 34717751.24068872,
+          "Effective_Budget": 7614887.97931128,
+          "Markov_Conversions": 64.53965342931147,
+          "Shapley_Conversions": 64.18333333333334,
+          "Markov_CPA": 655916.7421988993,
+          "Shapley_CPA": 659558.1285899766,
+          "Markov_CPA_Effective": 117987.74202671634,
+          "Shapley_CPA_Effective": 118642.76259638452,
+          "Markov_Allocated_Budget": 19371836.516811904,
+          "Markov_Projected_Conversions": 61.66664465540136,
+          "Shapley_Allocated_Budget": 19231599.500695184,
+          "Shapley_Projected_Conversions": 61.29963168407149
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B08_YOU_119",
+          "Total_Budget": 42501225.14,
+          "Wasted_Budget": 9022606.454301676,
+          "Effective_Budget": 33478618.685698323,
+          "Markov_Conversions": 59.84518546625504,
+          "Shapley_Conversions": 57.43333333333333,
+          "Markov_CPA": 710186.2047693913,
+          "Shapley_CPA": 740009.7238537435,
+          "Markov_CPA_Effective": 559420.4182820345,
+          "Shapley_CPA_Effective": 582912.6875049041,
+          "Markov_Allocated_Budget": 17958526.764170453,
+          "Markov_Projected_Conversions": 56.910111455806266,
+          "Shapley_Allocated_Budget": 17205333.69746693,
+          "Shapley_Projected_Conversions": 54.47645281659916
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 306.00000000000006,
+        "Total_Spend_Historical": 100000000.01,
+        "Total_Conversions_Projected": 318.99068936675553,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 4.245323323115413
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 306.0,
+        "Total_Spend_Historical": 100000000.01,
+        "Total_Conversions_Projected": 319.5848771576689,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 4.439502339756106
+      }
+    },
+    "B09": {
+      "Total_Journeys": 9800,
+      "Total_Conversions": 208,
+      "Base_Conversion_Rate": 0.021224489795918358,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B09_GOO_478",
+          "Total_Budget": 4501347.77,
+          "Wasted_Budget": 3713110.138609647,
+          "Effective_Budget": 788237.6313903527,
+          "Markov_Conversions": 33.0714089127315,
+          "Shapley_Conversions": 32.333333333333336,
+          "Markov_CPA": 136109.94868341144,
+          "Shapley_CPA": 139216.94134020616,
+          "Markov_CPA_Effective": 23834.41338923135,
+          "Shapley_CPA_Effective": 24378.483445062455,
+          "Markov_Allocated_Budget": 17256106.40869001,
+          "Markov_Projected_Conversions": 35.97227857858571,
+          "Shapley_Allocated_Budget": 16857899.446136907,
+          "Shapley_Projected_Conversions": 35.12018812376397
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B09_INF_977",
+          "Total_Budget": 27579421.65,
+          "Wasted_Budget": 6236552.63442211,
+          "Effective_Budget": 21342869.01557789,
+          "Markov_Conversions": 31.09706391770115,
+          "Shapley_Conversions": 34.333333333333336,
+          "Markov_CPA": 886881.852350735,
+          "Shapley_CPA": 803284.1257281553,
+          "Markov_CPA_Effective": 686330.679708609,
+          "Shapley_CPA_Effective": 621636.9616187734,
+          "Markov_Allocated_Budget": 14505961.67753789,
+          "Markov_Projected_Conversions": 29.930854347280444,
+          "Shapley_Allocated_Budget": 16004631.816867089,
+          "Shapley_Projected_Conversions": 33.242784523040704
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B09_INS_659",
+          "Total_Budget": 4680738.91,
+          "Wasted_Budget": 1065228.3998661311,
+          "Effective_Budget": 3615510.510133869,
+          "Markov_Conversions": 32.519443191499484,
+          "Shapley_Conversions": 33.16666666666667,
+          "Markov_CPA": 143936.62531170077,
+          "Shapley_CPA": 141127.80633165827,
+          "Markov_CPA_Effective": 111179.96359417851,
+          "Shapley_CPA_Effective": 109010.36713971462,
+          "Markov_Allocated_Budget": 16923109.666555006,
+          "Markov_Projected_Conversions": 35.24063980789629,
+          "Shapley_Allocated_Budget": 17250150.091850203,
+          "Shapley_Projected_Conversions": 35.98335544883292
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B09_MAR_179",
+          "Total_Budget": 47312759.34,
+          "Wasted_Budget": 39730080.04677796,
+          "Effective_Budget": 7582679.29322204,
+          "Markov_Conversions": 78.59539654579143,
+          "Shapley_Conversions": 74.5,
+          "Markov_CPA": 601978.7598174982,
+          "Shapley_CPA": 635070.5951677853,
+          "Markov_CPA_Effective": 96477.39723285449,
+          "Shapley_CPA_Effective": 101780.93011036296,
+          "Markov_Allocated_Budget": 35549253.330322504,
+          "Markov_Projected_Conversions": 77.32406462771485,
+          "Shapley_Allocated_Budget": 33673459.69366608,
+          "Shapley_Projected_Conversions": 73.06638749837465
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B09_YOU_370",
+          "Total_Budget": 15925732.33,
+          "Wasted_Budget": 3685042.956018135,
+          "Effective_Budget": 12240689.373981865,
+          "Markov_Conversions": 32.7166874322764,
+          "Shapley_Conversions": 33.66666666666667,
+          "Markov_CPA": 486777.04192902456,
+          "Shapley_CPA": 473041.5543564356,
+          "Markov_CPA_Effective": 374142.0765571121,
+          "Shapley_CPA_Effective": 363584.8328905504,
+          "Markov_Allocated_Budget": 15765568.916894596,
+          "Markov_Projected_Conversions": 32.69674622572293,
+          "Shapley_Allocated_Budget": 16213858.951479722,
+          "Shapley_Projected_Conversions": 33.703067385310135
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 207.99999999999997,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 211.1645835872002,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 1.5214344169232068
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 208.0,
+        "Total_Spend_Historical": 100000000.0,
+        "Total_Conversions_Projected": 211.11578297932238,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 1.4979725862126805
+      }
+    },
+    "B10": {
+      "Total_Journeys": 9809,
+      "Total_Conversions": 307,
+      "Base_Conversion_Rate": 0.03129778774594761,
+      "Channels": [
+        {
+          "Channel": "Google Search",
+          "Campaign_ID": "CMP_B10_GOO_707",
+          "Total_Budget": 18453650.73,
+          "Wasted_Budget": 15082689.350384122,
+          "Effective_Budget": 3370961.3796158787,
+          "Markov_Conversions": 59.23823043434766,
+          "Shapley_Conversions": 58.16666666666667,
+          "Markov_CPA": 311515.90104386635,
+          "Shapley_CPA": 317254.7403438395,
+          "Markov_CPA_Effective": 56905.16672931066,
+          "Shapley_CPA_Effective": 57953.49076703516,
+          "Markov_Allocated_Budget": 18855711.791956075,
+          "Markov_Projected_Conversions": 59.314544931329095,
+          "Shapley_Allocated_Budget": 18483040.262826297,
+          "Shapley_Projected_Conversions": 58.17219918592407
+        },
+        {
+          "Channel": "Influencer Blog",
+          "Campaign_ID": "CMP_B10_INF_456",
+          "Total_Budget": 2002482.24,
+          "Wasted_Budget": 438129.7827461859,
+          "Effective_Budget": 1564352.4572538142,
+          "Markov_Conversions": 61.677128977194684,
+          "Shapley_Conversions": 63.83333333333333,
+          "Markov_CPA": 32467.1766213441,
+          "Shapley_CPA": 31370.47895561358,
+          "Markov_CPA_Effective": 25363.5745242331,
+          "Shapley_CPA_Effective": 24506.82700658717,
+          "Markov_Allocated_Budget": 22636348.352451842,
+          "Markov_Projected_Conversions": 71.98577848057884,
+          "Shapley_Allocated_Budget": 23387437.71224995,
+          "Shapley_Projected_Conversions": 74.64597068392833
+        },
+        {
+          "Channel": "Instagram",
+          "Campaign_ID": "CMP_B10_INS_931",
+          "Total_Budget": 39789831.54,
+          "Wasted_Budget": 8901497.687712418,
+          "Effective_Budget": 30888333.852287583,
+          "Markov_Conversions": 59.78363795319175,
+          "Shapley_Conversions": 55.0,
+          "Markov_CPA": 665563.9051466536,
+          "Shapley_CPA": 723451.4825454545,
+          "Markov_CPA_Effective": 516668.6891231333,
+          "Shapley_CPA_Effective": 561606.0700415925,
+          "Markov_Allocated_Budget": 18193842.437020164,
+          "Markov_Projected_Conversions": 57.11022497980426,
+          "Shapley_Allocated_Budget": 16710175.801111469,
+          "Shapley_Projected_Conversions": 52.27314077978358
+        },
+        {
+          "Channel": "Marketplace",
+          "Campaign_ID": "CMP_B10_MAR_943",
+          "Total_Budget": 11560330.99,
+          "Wasted_Budget": 9447613.733989274,
+          "Effective_Budget": 2112717.256010726,
+          "Markov_Conversions": 64.89079587263133,
+          "Shapley_Conversions": 66.33333333333334,
+          "Markov_CPA": 178150.55023659748,
+          "Shapley_CPA": 174276.34658291456,
+          "Markov_CPA_Effective": 32558.041978058038,
+          "Shapley_CPA_Effective": 31850.008884583807,
+          "Markov_Allocated_Budget": 21249901.43935341,
+          "Markov_Projected_Conversions": 67.31983894713812,
+          "Shapley_Allocated_Budget": 21686817.956790235,
+          "Shapley_Projected_Conversions": 68.8993870669313
+        },
+        {
+          "Channel": "YouTube",
+          "Campaign_ID": "CMP_B10_YOU_857",
+          "Total_Budget": 28193704.51,
+          "Wasted_Budget": 6190826.010307323,
+          "Effective_Budget": 22002878.49969268,
+          "Markov_Conversions": 61.41020676263456,
+          "Shapley_Conversions": 63.66666666666667,
+          "Markov_CPA": 459104.5364653396,
+          "Shapley_CPA": 442833.05513089005,
+          "Markov_CPA_Effective": 358293.50949328626,
+          "Shapley_CPA_Effective": 345594.950256953,
+          "Markov_Allocated_Budget": 19064195.97921851,
+          "Markov_Projected_Conversions": 60.00947562376011,
+          "Shapley_Allocated_Budget": 19732528.26702204,
+          "Shapley_Projected_Conversions": 62.34234668693681
+        }
+      ],
+      "Markov_Optimization": {
+        "Total_Conversions_Historical": 307.0,
+        "Total_Spend_Historical": 100000000.01,
+        "Total_Conversions_Projected": 315.73986296261046,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 2.8468609005021768
+      },
+      "Shapley_Optimization": {
+        "Total_Conversions_Historical": 307.0,
+        "Total_Spend_Historical": 100000000.01,
+        "Total_Conversions_Projected": 316.33304440350406,
+        "Total_Spend_Target": 100000000.0,
+        "Uplift_Percentage": 3.040079610893203
+      }
+    }
+  },
+  "Persona_Data": [
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Google Search",
+      "Conversions": 113
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Influencer Blog",
+      "Conversions": 23
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Instagram",
+      "Conversions": 23
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Marketplace",
+      "Conversions": 72
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "YouTube",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Google Search",
+      "Conversions": 124
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Influencer Blog",
+      "Conversions": 36
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Instagram",
+      "Conversions": 20
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Marketplace",
+      "Conversions": 86
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Luxury",
+      "Channel": "YouTube",
+      "Conversions": 20
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Google Search",
+      "Conversions": 123
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Influencer Blog",
+      "Conversions": 29
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Instagram",
+      "Conversions": 31
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Marketplace",
+      "Conversions": 92
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "YouTube",
+      "Conversions": 21
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Google Search",
+      "Conversions": 137
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Influencer Blog",
+      "Conversions": 23
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Instagram",
+      "Conversions": 28
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Marketplace",
+      "Conversions": 69
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "YouTube",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Google Search",
+      "Conversions": 139
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Influencer Blog",
+      "Conversions": 17
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Instagram",
+      "Conversions": 26
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Marketplace",
+      "Conversions": 78
+    },
+    {
+      "Segment": "Budget Parent",
+      "Trend_Affinity": "Vegan",
+      "Channel": "YouTube",
+      "Conversions": 16
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Google Search",
+      "Conversions": 132
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Influencer Blog",
+      "Conversions": 19
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Instagram",
+      "Conversions": 19
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Marketplace",
+      "Conversions": 57
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "YouTube",
+      "Conversions": 22
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Google Search",
+      "Conversions": 161
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Influencer Blog",
+      "Conversions": 34
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Instagram",
+      "Conversions": 25
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Marketplace",
+      "Conversions": 43
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Luxury",
+      "Channel": "YouTube",
+      "Conversions": 23
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Google Search",
+      "Conversions": 145
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Influencer Blog",
+      "Conversions": 25
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Instagram",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Marketplace",
+      "Conversions": 34
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "YouTube",
+      "Conversions": 21
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Google Search",
+      "Conversions": 126
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Influencer Blog",
+      "Conversions": 26
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Instagram",
+      "Conversions": 22
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Marketplace",
+      "Conversions": 33
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "YouTube",
+      "Conversions": 20
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Google Search",
+      "Conversions": 141
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Influencer Blog",
+      "Conversions": 20
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Instagram",
+      "Conversions": 27
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Marketplace",
+      "Conversions": 45
+    },
+    {
+      "Segment": "Fitness Enthusiast",
+      "Trend_Affinity": "Vegan",
+      "Channel": "YouTube",
+      "Conversions": 25
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Google Search",
+      "Conversions": 127
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Influencer Blog",
+      "Conversions": 32
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Instagram",
+      "Conversions": 89
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Marketplace",
+      "Conversions": 37
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "YouTube",
+      "Conversions": 15
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Google Search",
+      "Conversions": 154
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Influencer Blog",
+      "Conversions": 30
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Instagram",
+      "Conversions": 95
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Marketplace",
+      "Conversions": 45
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Luxury",
+      "Channel": "YouTube",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Google Search",
+      "Conversions": 139
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Influencer Blog",
+      "Conversions": 20
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Instagram",
+      "Conversions": 108
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Marketplace",
+      "Conversions": 34
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "YouTube",
+      "Conversions": 26
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Google Search",
+      "Conversions": 143
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Influencer Blog",
+      "Conversions": 26
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Instagram",
+      "Conversions": 120
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Marketplace",
+      "Conversions": 37
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "YouTube",
+      "Conversions": 26
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Google Search",
+      "Conversions": 129
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Influencer Blog",
+      "Conversions": 18
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Instagram",
+      "Conversions": 99
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Marketplace",
+      "Conversions": 47
+    },
+    {
+      "Segment": "Gen-Z Trendseeker",
+      "Trend_Affinity": "Vegan",
+      "Channel": "YouTube",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Google Search",
+      "Conversions": 133
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Influencer Blog",
+      "Conversions": 19
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Instagram",
+      "Conversions": 22
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "Marketplace",
+      "Conversions": 31
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "High-Protein",
+      "Channel": "YouTube",
+      "Conversions": 16
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Google Search",
+      "Conversions": 131
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Influencer Blog",
+      "Conversions": 22
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Instagram",
+      "Conversions": 17
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Luxury",
+      "Channel": "Marketplace",
+      "Conversions": 41
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Luxury",
+      "Channel": "YouTube",
+      "Conversions": 20
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Google Search",
+      "Conversions": 129
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Influencer Blog",
+      "Conversions": 23
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Instagram",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "Marketplace",
+      "Conversions": 38
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Sustainable Packaging",
+      "Channel": "YouTube",
+      "Conversions": 26
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Google Search",
+      "Conversions": 127
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Influencer Blog",
+      "Conversions": 23
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Instagram",
+      "Conversions": 30
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "Marketplace",
+      "Conversions": 53
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Value-Pack",
+      "Channel": "YouTube",
+      "Conversions": 18
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Google Search",
+      "Conversions": 108
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Influencer Blog",
+      "Conversions": 36
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Instagram",
+      "Conversions": 24
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Vegan",
+      "Channel": "Marketplace",
+      "Conversions": 52
+    },
+    {
+      "Segment": "Premium Gourmet",
+      "Trend_Affinity": "Vegan",
+      "Channel": "YouTube",
+      "Conversions": 28
+    }
+  ],
+  "Total_Wasted_Budget": 492274886.9903314,
+  "Total_Historical_Budget": 1018605945.35
+};

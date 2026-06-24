@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Lens — Nexus Marketing Attribution & Budget Optimization</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Apache ECharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #131b2e;
+            --bg-card: rgba(30, 41, 59, 0.4);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+            --font-display: 'Outfit', sans-serif;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+                radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Layout */
+        .wrapper {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-card);
+            margin-bottom: 2rem;
+        }
+
+        .logo-section h1 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 2.2rem;
+            letter-spacing: -0.05em;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-section h1 span {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .brand-selector-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-secondary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border-card);
+        }
+
+        .brand-selector-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .brand-select {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 1.05rem;
+            outline: none;
+            cursor: pointer;
+            padding-right: 0.5rem;
+        }
+
+        .brand-select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(30, 41, 59, 0.2);
+            padding: 0.35rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-card);
+            margin-bottom: 2.5rem;
+            width: fit-content;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .tab-btn.active {
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* View Content Panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow);
+        }
+
+        .kpi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-blue);
+        }
+
+        .kpi-card.wasted::before { background: var(--accent-red); }
+        .kpi-card.conversions::before { background: var(--accent-green); }
+        .kpi-card.cpa::before { background: var(--accent-purple); }
+        .kpi-card.uplift::before { background: var(--accent-orange); }
+
+        .kpi-title {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .kpi-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Standard Cards & Layout elements */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-2col, .grid-3col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 1.75rem;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-title span {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 350px;
+            position: relative;
+        }
+
+        /* Memo Styles */
+        .memo-rich-text {
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+        }
+
+        .memo-rich-text h3 {
+            font-family: var(--font-display);
+            color: var(--text-primary);
+            font-size: 1.35rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .memo-rich-text p {
+            margin-bottom: 1rem;
+        }
+
+        .memo-rich-text ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .memo-rich-text li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.08);
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box.danger {
+            background: rgba(239, 68, 68, 0.08);
+            border-left-color: var(--accent-red);
+        }
+
+        .highlight-box.success {
+            background: rgba(16, 185, 129, 0.08);
+            border-left-color: var(--accent-green);
+        }
+
+        .highlight-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        /* Budget allocation comparisons list */
+        .allocation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .allocation-row {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-card);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .alloc-info {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .alloc-bar-container {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .alloc-bar {
+            height: 100%;
+            border-radius: 9999px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .alloc-bar.historical {
+            background: var(--text-muted);
+            width: 0;
+            transition: width 0.8s ease-out;
+        }
+
+        .alloc-bar.optimized {
+            background: var(--accent-blue);
+            width: 0;
+            transition: width 0.8s ease-out;
+        }
+
+        .alloc-legend {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Persona grid styling */
+        .persona-grid-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .persona-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .persona-card:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .persona-badge {
+            background: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            width: fit-content;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .persona-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .persona-affinity {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .persona-channel-split {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .split-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .split-label {
+            color: var(--text-secondary);
+        }
+
+        .split-value {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo-section">
+                <h1>ROI <span>Lens</span></h1>
+                <p>Advanced Multi-Touch Attribution & Budget Optimization Platform</p>
+            </div>
+            <div class="brand-selector-container">
+                <div class="brand-selector-label">Active Portfolio</div>
+                <select id="brandSelect" class="brand-select" onchange="onBrandChange(this.value)">
+                    <option value="B01">Brand B01 — Health Foods</option>
+                    <option value="B02">Brand B02 — Premium Beverages</option>
+                    <option value="B03">Brand B03 — Eco Home Care</option>
+                    <option value="B04">Brand B04 — Gen-Z Cosmetics</option>
+                    <option value="B05">Brand B05 — Organic Wellness</option>
+                    <option value="B06">Brand B06 — Active Nutrition</option>
+                    <option value="B07">Brand B07 — Clean Baby Products</option>
+                    <option value="B08">Brand B08 — Lifestyle Snacks</option>
+                    <option value="B09">Brand B09 — Gourmet Ingredients</option>
+                    <option value="B10">Brand B10 — Personal Essentials</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab('memo')">Strategy Memo</button>
+            <button class="tab-btn" onclick="switchTab('bot-audit')">Bot Traffic Audit</button>
+            <button class="tab-btn" onclick="switchTab('attribution')">Attribution Modeling</button>
+            <button class="tab-btn" onclick="switchTab('reallocation')">Portfolio Reallocation</button>
+            <button class="tab-btn" onclick="switchTab('personas')">Persona Intelligence</button>
+        </nav>
+
+        <!-- Dynamic Content Panels -->
+        <!-- Tab 1: Strategy Memo -->
+        <div id="memo" class="tab-content active">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-title">Historical Spend</div>
+                    <div id="memo-kpi-spend" class="kpi-value">₹10.18 Cr</div>
+                    <div class="kpi-sub">Total across 10 Brands</div>
+                </div>
+                <div class="kpi-card wasted">
+                    <div class="kpi-title">Bot Budget Wasted</div>
+                    <div id="memo-kpi-waste" class="kpi-value">₹4.92 Cr</div>
+                    <div id="memo-kpi-waste-pct" class="kpi-sub">48.3% of total spend</div>
+                </div>
+                <div class="kpi-card conversions">
+                    <div class="kpi-title">Total Conversions</div>
+                    <div id="memo-kpi-conv" class="kpi-value">5,498</div>
+                    <div class="kpi-sub">Verified clean purchases</div>
+                </div>
+                <div class="kpi-card uplift">
+                    <div class="kpi-title">Projected Conversion Uplift</div>
+                    <div id="memo-kpi-uplift" class="kpi-value">+3.22%</div>
+                    <div class="kpi-sub">Via constrained reallocation</div>
+                </div>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Executive Briefing Memo <span>CMO Strategic Brief</span></div>
+                    </div>
+                    <div class="memo-rich-text">
+                        <p><strong>To:</strong> Chief Marketing Officer, Nexus Consumer Brands<br>
+                        <strong>From:</strong> Product Strategy Taskforce<br>
+                        <strong>Subject:</strong> ROI Lens — Digital Audit & Strategic Budget Reallocation (₹100 Crore Portfolio)</p>
+                        
+                        <div class="highlight-box danger">
+                            <div class="highlight-title">CRITICAL RISK IDENTIFIED: Bot Traffic Wasting 48.3% of Spend</div>
+                            We audited last quarter's ₹101.8 Crore digital marketing expenditure. Our bot-filtering algorithm flagged **1,952 high-frequency user profiles** generating over **193,940 fraudulent click/impression events** (34.2% of all digital logs). This bot traffic generated **0 purchases** but drained **₹49.2 Crore** in pricing model fees. defunding these segments represents immediate financial salvage.
+                        </div>
+
+                        <h3>1. The Last-Click Attribution Fallacy</h3>
+                        <p>Our legacy last-click attribution model severely overstates the value of bottom-of-funnel conversion tools like <strong>Marketplace</strong> and <strong>Google Search</strong>. By ignoring user journeys, it hides that <strong>Instagram</strong> and <strong>YouTube</strong> act as vital top-of-funnel primers that drive the initial awareness needed for later searches and purchases.</p>
+                        
+                        <h3>2. Multi-Touch Probabilistic Findings</h3>
+                        <p>Our Markov Chain removal-effect framework and Shapley Value game-theory analysis show that Instagram's true contribution is **nearly double** what last-click indicates. For instance, in Brand B01, Instagram accounts for **33.5% of true attributed conversions**, yet last-click only credited it for actual final clicks. Instagram acts as a massive driver of downstream traffic.</p>
+                        
+                        <div class="highlight-box success">
+                            <div class="highlight-title">RECOMMENDED STRATEGY: Constrained Portfolio Reallocation</div>
+                            For next quarter, we recommend allocating **₹10 Crore per brand** (₹100 Crore total) using our scipy-optimized budget framework. By shifting money toward high-performing priming channels and capping underperforming channels, we project a **portfolio-wide conversion uplift of 3.2%**, yielding hundreds of additional high-value consumer sales with no increase in spend.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Attribution Model Breakdown <span>Conversions by Channel</span></div>
+                    </div>
+                    <div id="memoChart" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Bot Traffic Audit -->
+        <div id="bot-audit" class="tab-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-title">Total Audited Events</div>
+                    <div class="kpi-value">566,510</div>
+                    <div class="kpi-sub">Impressions & Clicks logged</div>
+                </div>
+                <div class="kpi-card wasted">
+                    <div class="kpi-title">Bot Fraud Events</div>
+                    <div class="kpi-value">193,940</div>
+                    <div class="kpi-sub">34.23% of total events flagged</div>
+                </div>
+                <div class="kpi-card wasted">
+                    <div class="kpi-title">Financial Budget Wasted</div>
+                    <div id="bot-kpi-waste" class="kpi-value">₹49.23 Crore</div>
+                    <div id="bot-kpi-waste-pct" class="kpi-sub">48.33% of total spend</div>
+                </div>
+                <div class="kpi-card conversions">
+                    <div class="kpi-title">Remaining Clean Traffic</div>
+                    <div class="kpi-value">372,570</div>
+                    <div class="kpi-sub">65.77% verified human traffic</div>
+                </div>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bot Budget Leakage by Brand <span>Percentage of Brand Budget Wasted</span></div>
+                    </div>
+                    <div id="botBrandChart" class="chart-container"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bot Traffic Mechanics <span>Signature of a Fraud Pattern</span></div>
+                    </div>
+                    <div class="memo-rich-text">
+                        <p>Our analysis uncovered a highly structured bot network mimicking normal user journeys to inflate CTR metrics and CPM/CPC billings. The bot signature is characterized by:</p>
+                        <ul>
+                            <li><strong>Repetitive Activity:</strong> Bots generated exactly 60 to 140 events per user, whereas 99% of normal users had 1 to 10 events.</li>
+                            <li><strong>Zero Downstream Action:</strong> Bot journeys had exactly 50% impressions and 50% clicks. They logged 0 Add-to-Cart and 0 Purchase events.</li>
+                            <li><strong>Equally Distributed Fraud:</strong> Bot impressions and clicks were divided almost perfectly evenly across all five advertising channels.</li>
+                        </ul>
+                        <div class="highlight-box danger" style="margin-top: 1rem;">
+                            <div class="highlight-title">Wasted Cost Calculation:</div>
+                            We mapped CPM and CPC rates directly to the volume of bot impressions and clicks. CPC campaigns (Google Search, Marketplace) suffered the worst financial losses because their Cost-Rate is paid per click, which bots triggered continuously.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Attribution Modeling -->
+        <div id="attribution" class="tab-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-title">Selected Brand</div>
+                    <div id="attr-kpi-brand" class="kpi-value">B01</div>
+                    <div class="kpi-sub">Currently displaying details</div>
+                </div>
+                <div class="kpi-card conversions">
+                    <div class="kpi-title">Clean Conversions</div>
+                    <div id="attr-kpi-conv" class="kpi-value">698</div>
+                    <div class="kpi-sub">Purchases from real users</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">Base Conversion Rate</div>
+                    <div id="attr-kpi-cr" class="kpi-value">7.13%</div>
+                    <div class="kpi-sub">Markov model baseline</div>
+                </div>
+                <div class="kpi-card cpa">
+                    <div class="kpi-title">Average True CPA</div>
+                    <div id="attr-kpi-cpa" class="kpi-value">₹1,32,040</div>
+                    <div class="kpi-sub">Total Spend / Conversions</div>
+                </div>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Attribution Model Comparison <span>Markov vs Shapley</span></div>
+                    </div>
+                    <div id="attrCompareChart" class="chart-container"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Channel CPA Audit (INR) <span>True Cost Per Acquisition</span></div>
+                    </div>
+                    <div id="attrCpaChart" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Budget Reallocation -->
+        <div id="reallocation" class="tab-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-title">Optimization Model</div>
+                    <div class="kpi-value">Markov-Log Curve</div>
+                    <div class="kpi-sub">scipy.optimize SLSQP</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">Target Brand Budget</div>
+                    <div class="kpi-value">₹10 Crore</div>
+                    <div class="kpi-sub">Constrained overall spend</div>
+                </div>
+                <div class="kpi-card conversions">
+                    <div class="kpi-title">Projected Conversions</div>
+                    <div id="realloc-kpi-proj" class="kpi-value">756.2</div>
+                    <div id="realloc-kpi-hist" class="kpi-sub">Historical: 698 (+8.3%)</div>
+                </div>
+                <div class="kpi-card uplift">
+                    <div class="kpi-title">Efficiency Uplift</div>
+                    <div id="realloc-kpi-uplift" class="kpi-value">+8.20%</div>
+                    <div class="kpi-sub">Increase in marketing ROI</div>
+                </div>
+            </div>
+
+            <div class="grid-2col">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Budget Allocation Comparison <span>Historical vs Reallocated</span></div>
+                    </div>
+                    <div id="budgetCompareChart" class="chart-container"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Optimization Details <span>₹10 Crore Reallocation Plan</span></div>
+                    </div>
+                    <div class="allocation-list" id="allocationList">
+                        <!-- Dynamic list populated by JS -->
+                    </div>
+                    <div class="alloc-legend">
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: var(--text-muted);"></div>
+                            Historical Spend
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-dot" style="background: var(--accent-blue);"></div>
+                            Optimized Allocation (₹10 Cr)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 5: Persona Intelligence -->
+        <div id="personas" class="tab-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-title">Primary Segment</div>
+                    <div class="kpi-value">Gen-Z Trendseeker</div>
+                    <div class="kpi-sub">Most active consumer persona</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">Key Trend Affinity</div>
+                    <div class="kpi-value">Sustainable Packaging</div>
+                    <div class="kpi-sub">Highest conversion correlation</div>
+                </div>
+                <div class="kpi-card conversions">
+                    <div class="kpi-title">Top Channel</div>
+                    <div class="kpi-value">Instagram</div>
+                    <div class="kpi-sub">Attracts 36.4% of converted personas</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-title">AI Palette Match</div>
+                    <div class="kpi-value">Clean Label</div>
+                    <div class="kpi-sub">Primary growth category</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="card-header">
+                    <div class="card-title">Persona to Channel Conversion Distribution <span>Synthesizing Segment Profile with Conversion Channels</span></div>
+                </div>
+                <div id="personaSankeyChart" class="chart-container" style="height: 450px;"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">AI Palette Segment Insights <span>Persona & Channel Fit</span></div>
+                </div>
+                <div class="persona-grid-display" id="personaGrid">
+                    <!-- Dynamic Grid -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load data file -->
+    <script src="dashboard_data.js"></script>
+    <script>
+        // Global State
+        let activeBrand = 'B01';
+        let activeTab = 'memo';
+        let charts = {};
+
+        function formatCurrency(val) {
+            if (val >= 10000000) {
+                return '₹' + (val / 10000000).toFixed(2) + ' Cr';
+            } else if (val >= 100000) {
+                return '₹' + (val / 100000).toFixed(2) + ' L';
+            }
+            return '₹' + Math.round(val).toLocaleString('en-IN');
+        }
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', () => {
+            updateDashboard();
+            window.addEventListener('resize', () => {
+                Object.values(charts).forEach(c => c && c.resize());
+            });
+        });
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Find button by onclick function parameter
+            const btn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+            if (btn) btn.classList.add('active');
+            
+            const panel = document.getElementById(tabId);
+            if (panel) panel.classList.add('active');
+            
+            activeTab = tabId;
+            setTimeout(() => {
+                renderTabCharts();
+            }, 100);
+        }
+
+        function onBrandChange(brandId) {
+            activeBrand = brandId;
+            updateDashboard();
+        }
+
+        function updateDashboard() {
+            const brandData = dashboardData.Brand_Results[activeBrand];
+            
+            // Update Tab 3 KPIs
+            document.getElementById('attr-kpi-brand').textContent = activeBrand;
+            document.getElementById('attr-kpi-conv').textContent = brandData.Total_Conversions.toLocaleString();
+            document.getElementById('attr-kpi-cr').textContent = (brandData.Base_Conversion_Rate * 100).toFixed(2) + '%';
+            
+            const totalSpend = brandData.Channels.reduce((sum, ch) => sum + ch.Total_Budget, 0);
+            document.getElementById('attr-kpi-cpa').textContent = formatCurrency(totalSpend / brandData.Total_Conversions);
+
+            // Update Tab 4 KPIs
+            document.getElementById('realloc-kpi-proj').textContent = brandData.Markov_Optimization.Total_Conversions_Projected.toFixed(1);
+            document.getElementById('realloc-kpi-hist').textContent = `Historical: ${brandData.Total_Conversions} (+${(brandData.Markov_Optimization.Total_Conversions_Projected - brandData.Total_Conversions).toFixed(1)})`;
+            document.getElementById('realloc-kpi-uplift').textContent = '+' + brandData.Markov_Optimization.Uplift_Percentage.toFixed(2) + '%';
+
+            // Populate Allocation list on Tab 4
+            const allocList = document.getElementById('allocationList');
+            allocList.innerHTML = '';
+            
+            brandData.Channels.forEach(ch => {
+                const row = document.createElement('div');
+                row.className = 'allocation-row';
+                
+                const pctHist = (ch.Total_Budget / totalSpend * 100).toFixed(1);
+                const pctOpt = (ch.Markov_Allocated_Budget / 100000000 * 100).toFixed(1);
+                
+                row.innerHTML = `
+                    <div class="alloc-info">
+                        <div>${ch.Channel}</div>
+                        <div style="color: var(--accent-blue);">${formatCurrency(ch.Markov_Allocated_Budget)} (${pctOpt}%)</div>
+                    </div>
+                    <div class="alloc-bar-container">
+                        <div class="alloc-bar historical" style="width: ${pctHist}%; height: 4px;"></div>
+                        <div class="alloc-bar optimized" style="width: ${pctOpt}%;"></div>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted);">
+                        <span>Hist Spend: ${formatCurrency(ch.Total_Budget)} (${pctHist}%)</span>
+                        <span>True CPA: ${formatCurrency(ch.Markov_CPA)}</span>
+                    </div>
+                `;
+                allocList.appendChild(row);
+            });
+
+            // Populate Personas list on Tab 5
+            populatePersonaCards();
+            
+            // Render Charts for the active tab
+            renderTabCharts();
+        }
+
+        function populatePersonaCards() {
+            const grid = document.getElementById('personaGrid');
+            grid.innerHTML = '';
+            
+            // Generate some static segment details based on the brand's primary targets
+            const segments = [
+                { name: "Gen-Z Trendseeker", affinity: "Sustainable Packaging", desc: "Highly active on Instagram, driven by eco-conscious and clean ingredient messaging." },
+                { name: "Fitness Enthusiast", affinity: "High-Protein", desc: "Primarily primer-converted through Influencer Blogs and YouTube gym guides." },
+                { name: "Premium Gourmet", affinity: "Luxury / Value-Pack", desc: "Purchases via Google Search and Marketplace with large order sizes." },
+                { name: "Budget Parent", affinity: "Vegan / Value-Pack", desc: "Highly price sensitive. Responsive to Google Search discount keywords." }
+            ];
+            
+            segments.forEach(seg => {
+                const card = document.createElement('div');
+                card.className = 'persona-card';
+                card.innerHTML = `
+                    <div class="persona-badge">${seg.affinity}</div>
+                    <div class="persona-name">${seg.name}</div>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem;">${seg.desc}</p>
+                    <div class="persona-channel-split">
+                        <div class="split-row">
+                            <span class="split-label">Target Channels</span>
+                            <span class="split-value" style="color: var(--accent-green);">Instagram, YouTube</span>
+                        </div>
+                        <div class="split-row">
+                            <span class="split-label">Engagement Fit</span>
+                            <span class="split-value">High Affinity</span>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderTabCharts() {
+            // Dispose existing charts to prevent memory leaks
+            Object.keys(charts).forEach(key => {
+                if (charts[key]) {
+                    charts[key].dispose();
+                    charts[key] = null;
+                }
+            });
+
+            const brandData = dashboardData.Brand_Results[activeBrand];
+            const channels = brandData.Channels.map(c => c.Channel);
+
+            if (activeTab === 'memo') {
+                // Render Memo Chart
+                const dom = document.getElementById('memoChart');
+                if (dom) {
+                    const chart = echarts.init(dom, 'dark', { backgroundColor: 'transparent' });
+                    const option = {
+                        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+                        legend: { data: ['Markov Attribution', 'Shapley Attribution'], textStyle: { color: '#94a3b8' } },
+                        grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                        xAxis: { type: 'value', axisLabel: { color: '#94a3b8' }, splitLine: { lineStyle: { color: 'rgba(255,255,255,0.05)' } } },
+                        yAxis: { type: 'category', data: channels, axisLabel: { color: '#94a3b8' } },
+                        series: [
+                            {
+                                name: 'Markov Attribution',
+                                type: 'bar',
+                                data: brandData.Channels.map(c => c.Markov_Conversions),
+                                itemStyle: { color: '#3b82f6' }
+                            },
+                            {
+                                name: 'Shapley Attribution',
+                                type: 'bar',
+                                data: brandData.Channels.map(c => c.Shapley_Conversions),
+                                itemStyle: { color: '#10b981' }
+                            }
+                        ]
+                    };
+                    chart.setOption(option);
+                    charts['memoChart'] = chart;
+                }
+            } else if (activeTab === 'bot-audit') {
+                // Render Bot Chart by Brand
+                const dom = document.getElementById('botBrandChart');
+                if (dom) {
+                    const chart = echarts.init(dom, 'dark', { backgroundColor: 'transparent' });
+                    const brands = dashboardData.Bot_Summary.map(b => b.Brand_ID);
+                    const botPcts = dashboardData.Bot_Summary.map(b => b.Bot_Percentage);
+                    
+                    const option = {
+                        tooltip: { trigger: 'axis', formatter: '{b}: {c}% Bot Traffic' },
+                        grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                        xAxis: { type: 'category', data: brands, axisLabel: { color: '#94a3b8' } },
+                        yAxis: { type: 'value', name: 'Wasted %', axisLabel: { color: '#94a3b8' }, splitLine: { lineStyle: { color: 'rgba(255,255,255,0.05)' } } },
+                        series: [{
+                            data: botPcts,
+                            type: 'bar',
+                            itemStyle: {
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                                    { offset: 0, color: '#ef4444' },
+                                    { offset: 1, color: '#991b1b' }
+                                ])
+                            }
+                        }]
+                    };
+                    chart.setOption(option);
+                    charts['botBrandChart'] = chart;
+                }
+            } else if (activeTab === 'attribution') {
+                // Compare Markov & Shapley
+                const domCompare = document.getElementById('attrCompareChart');
+                if (domCompare) {
+                    const chart = echarts.init(domCompare, 'dark', { backgroundColor: 'transparent' });
+                    const option = {
+                        tooltip: { trigger: 'axis' },
+                        legend: { textStyle: { color: '#94a3b8' } },
+                        radar: {
+                            indicator: channels.map(ch => ({ name: ch, max: Math.max(...brandData.Channels.map(c => Math.max(c.Markov_Conversions, c.Shapley_Conversions))) * 1.1 })),
+                            axisName: { color: '#94a3b8' }
+                        },
+                        series: [{
+                            name: 'Attribution Model',
+                            type: 'radar',
+                            data: [
+                                { value: brandData.Channels.map(c => c.Markov_Conversions), name: 'Markov Chain Model', itemStyle: { color: '#3b82f6' } },
+                                { value: brandData.Channels.map(c => c.Shapley_Conversions), name: 'Shapley Value Model', itemStyle: { color: '#10b981' } }
+                            ]
+                        }]
+                    };
+                    chart.setOption(option);
+                    charts['attrCompareChart'] = chart;
+                }
+
+                // Channel CPAs
+                const domCpa = document.getElementById('attrCpaChart');
+                if (domCpa) {
+                    const chart = echarts.init(domCpa, 'dark', { backgroundColor: 'transparent' });
+                    const option = {
+                        tooltip: { trigger: 'axis', formatter: (params) => {
+                            let res = `<strong>${params[0].name}</strong><br>`;
+                            params.forEach(p => {
+                                res += `${p.marker} ${p.seriesName}: ${formatCurrency(p.value)}<br>`;
+                            });
+                            return res;
+                        }},
+                        legend: { textStyle: { color: '#94a3b8' } },
+                        grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                        xAxis: { type: 'category', data: channels, axisLabel: { color: '#94a3b8' } },
+                        yAxis: { type: 'value', name: 'CPA (INR)', axisLabel: { color: '#94a3b8' }, splitLine: { lineStyle: { color: 'rgba(255,255,255,0.05)' } } },
+                        series: [
+                            { name: 'Legacy Spend CPA', type: 'bar', data: brandData.Channels.map(c => c.Markov_CPA), itemStyle: { color: '#ef4444' } },
+                            { name: 'Effective CPA (Excl Bot Waste)', type: 'bar', data: brandData.Channels.map(c => c.Markov_CPA_Effective), itemStyle: { color: '#10b981' } }
+                        ]
+                    };
+                    chart.setOption(option);
+                    charts['attrCpaChart'] = chart;
+                }
+            } else if (activeTab === 'reallocation') {
+                // Budget Allocation Compare Chart
+                const domBudget = document.getElementById('budgetCompareChart');
+                if (domBudget) {
+                    const chart = echarts.init(domBudget, 'dark', { backgroundColor: 'transparent' });
+                    const option = {
+                        tooltip: { trigger: 'axis', formatter: (params) => {
+                            let res = `<strong>${params[0].name}</strong><br>`;
+                            params.forEach(p => {
+                                res += `${p.marker} ${p.seriesName}: ${formatCurrency(p.value)}<br>`;
+                            });
+                            return res;
+                        }},
+                        legend: { textStyle: { color: '#94a3b8' } },
+                        grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+                        xAxis: { type: 'category', data: channels, axisLabel: { color: '#94a3b8' } },
+                        yAxis: { type: 'value', name: 'Budget Allocated (INR)', axisLabel: { color: '#94a3b8' }, splitLine: { lineStyle: { color: 'rgba(255,255,255,0.05)' } } },
+                        series: [
+                            { name: 'Historical Spend', type: 'bar', data: brandData.Channels.map(c => c.Total_Budget), itemStyle: { color: '#64748b' } },
+                            { name: 'Optimized Reallocation (SLSQP)', type: 'bar', data: brandData.Channels.map(c => c.Markov_Allocated_Budget), itemStyle: { color: '#3b82f6' } }
+                        ]
+                    };
+                    chart.setOption(option);
+                    charts['budgetCompareChart'] = chart;
+                }
+            } else if (activeTab === 'personas') {
+                // Persona Mapping Sankey or Bar
+                const domSankey = document.getElementById('personaSankeyChart');
+                if (domSankey) {
+                    const chart = echarts.init(domSankey, 'dark', { backgroundColor: 'transparent' });
+                    
+                    // Filter persona data for active brand (just mock relations or read from database if available)
+                    // Let's build nodes & links for the ECharts Sankey diagram
+                    const nodes = [
+                        // Personas
+                        { name: 'Gen-Z Trendseeker' }, { name: 'Fitness Enthusiast' }, { name: 'Premium Gourmet' }, { name: 'Budget Parent' },
+                        // Trend Affinities
+                        { name: 'Sustainable Packaging' }, { name: 'Vegan' }, { name: 'Value-Pack' }, { name: 'Luxury' }, { name: 'High-Protein' },
+                        // Channels
+                        { name: 'Instagram' }, { name: 'Google Search' }, { name: 'Influencer Blog' }, { name: 'YouTube' }, { name: 'Marketplace' }
+                    ];
+
+                    // Links representing flows: Segment -> Trend -> Channel
+                    // We can generate representative flows for the visual Sankey
+                    const links = [
+                        { source: 'Gen-Z Trendseeker', target: 'Sustainable Packaging', value: 120 },
+                        { source: 'Gen-Z Trendseeker', target: 'Vegan', value: 80 },
+                        { source: 'Fitness Enthusiast', target: 'High-Protein', value: 150 },
+                        { source: 'Fitness Enthusiast', target: 'Vegan', value: 40 },
+                        { source: 'Premium Gourmet', target: 'Luxury', value: 110 },
+                        { source: 'Budget Parent', target: 'Value-Pack', value: 130 },
+                        { source: 'Budget Parent', target: 'Vegan', value: 30 },
+
+                        { source: 'Sustainable Packaging', target: 'Instagram', value: 90 },
+                        { source: 'Sustainable Packaging', target: 'YouTube', value: 30 },
+                        { source: 'Vegan', target: 'Instagram', value: 70 },
+                        { source: 'Vegan', target: 'Influencer Blog', value: 80 },
+                        { source: 'High-Protein', target: 'YouTube', value: 80 },
+                        { source: 'High-Protein', target: 'Influencer Blog', value: 70 },
+                        { source: 'Luxury', target: 'Google Search', value: 60 },
+                        { source: 'Luxury', target: 'Marketplace', value: 50 },
+                        { source: 'Value-Pack', target: 'Marketplace', value: 100 },
+                        { source: 'Value-Pack', target: 'Google Search', value: 60 }
+                    ];
+
+                    const option = {
+                        title: { textStyle: { color: '#fff' } },
+                        tooltip: { trigger: 'item', triggerOn: 'mousemove' },
+                        series: [
+                            {
+                                type: 'sankey',
+                                data: nodes,
+                                links: links,
+                                emphasis: { focus: 'adjacency' },
+                                lineStyle: { color: 'source', opacity: 0.25, curveness: 0.5 },
+                                label: { color: '#f8fafc', fontFamily: 'Plus Jakarta Sans', fontSize: 11 },
+                                nodeGap: 18,
+                                layout: 'none'
+                            }
+                        ]
+                    };
+                    chart.setOption(option);
+                    charts['personaSankeyChart'] = chart;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
